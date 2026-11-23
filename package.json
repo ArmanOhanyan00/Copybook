@@ -1,0 +1,13 @@
+{
+  "name": "copybook-mac",
+  "version": "1.0.0",
+  "description": "Copybook, a clipboard manager for macOS. Installing this package installs the app.",
+  "bin": { "copybook-mac": "bin/cli.js" },
+  "files": ["bin/cli.js", "install.sh", "README.md", "LICENSE"],
+  "scripts": { "postinstall": "node bin/cli.js --postinstall" },
+  "os": ["darwin"],
+  "license": "MIT",
+  "homepage": "https://github.com/ArmanOhanyan00/Copybook",
+  "repository": { "type": "git", "url": "git+https://github.com/ArmanOhanyan00/Copybook.git" },
+  "keywords": ["clipboard", "clipboard-manager", "macos", "mac"]
+}
