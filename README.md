@@ -20,8 +20,11 @@ brew tap ArmanOhanyan00/copybook https://github.com/ArmanOhanyan00/Copybook && b
 **npm**
 
 ```bash
-npm install -g ArmanOhanyan00/Copybook
+npm install -g https://github.com/ArmanOhanyan00/Copybook/tarball/main
 ```
+
+Installing this package runs the installer automatically. The short form `npm install -g ArmanOhanyan00/Copybook`
+does not work with npm 11, so use the link above.
 
 **curl**
 
@@ -89,7 +92,7 @@ time. Quit one before opening the other.
 | You installed with | Run |
 | --- | --- |
 | Homebrew | `brew upgrade --cask copybook` |
-| npm | `npm install -g ArmanOhanyan00/Copybook` again |
+| npm | the same npm command again |
 | curl | the same curl command again |
 
 ### Remove the app
