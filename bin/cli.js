@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 // Runs Copybook's installer (install.sh, shipped in this package).
 //
-//   npm install -g ArmanOhanyan00/Copybook    installs the app (this runs automatically as part of the install)
+//   npm install -g <link to this repository's tarball>   installs the app (this runs automatically as part of the install)
 //   copybook-mac                             installs or updates the app again
 //   copybook-mac --uninstall                 removes the app
-//   npx ArmanOhanyan00/Copybook               installs the app without keeping the command
 //
 // The options are the ones install.sh has; run copybook-mac --help to see them.
 "use strict";
@@ -23,9 +22,9 @@ if (process.platform !== "darwin") {
   process.exit(1);
 }
 if (automatic) {
-  // Not when working inside a copy of the source code, and not when asked to skip.
+  // Not when working inside a git clone of the source code, and not when asked to skip.
   const root = path.join(__dirname, "..");
-  if (process.env.COPYBOOK_SKIP_POSTINSTALL || fs.existsSync(path.join(root, "Package.swift"))) process.exit(0);
+  if (process.env.COPYBOOK_SKIP_POSTINSTALL || fs.existsSync(path.join(root, ".git"))) process.exit(0);
 }
 
 // npm hides the output of install scripts. Talk to the terminal directly so the questions and
