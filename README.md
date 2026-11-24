@@ -20,11 +20,14 @@ brew tap ArmanOhanyan00/copybook https://github.com/ArmanOhanyan00/Copybook && b
 **npm**
 
 ```bash
-npm install -g https://github.com/ArmanOhanyan00/Copybook/tarball/main
+npm install -g --allow-scripts=copybook-mac https://github.com/ArmanOhanyan00/Copybook/tarball/main
 ```
 
-Installing this package runs the installer automatically. The short form `npm install -g ArmanOhanyan00/Copybook`
-does not work with npm 11, so use the link above.
+Installing this package runs the installer automatically. `--allow-scripts=copybook-mac` tells npm that this one
+package may run its install step. Newer npm versions block install steps unless you allow them, and without the
+flag npm 11 prints a warning. If npm still did not install the app, run `copybook-mac` once and it does.
+
+The short form `npm install -g ArmanOhanyan00/Copybook` does not work with npm 11, so use the link above.
 
 **curl**
 
