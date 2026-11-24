@@ -432,8 +432,11 @@ main() {
     note "Your previous Copybook was kept too. Both copies use the same clips and settings, and Copybook runs only one copy at a time."
   fi
   if [ "$OPEN" = 1 ]; then
-    open "$DEST"
-    note "Opened. A short setup walks you through the shortcut and the Accessibility permission."
+    if open "$DEST" >/dev/null 2>&1; then
+      note "Opened. A short setup walks you through the shortcut and the Accessibility permission."
+    else
+      note "Copybook is installed, but it could not be opened from here. Open it from your Applications folder."
+    fi
   fi
   if [ "$FAILED_REMOVALS" != 0 ]; then warn "Some older copies couldn't be removed (see above); everything else is done."; fi
   return 0

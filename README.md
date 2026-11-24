@@ -20,15 +20,16 @@ brew tap ArmanOhanyan00/copybook https://github.com/ArmanOhanyan00/Copybook && b
 **npm**
 
 ```bash
-npm install -g --allow-scripts=copybook-mac https://github.com/ArmanOhanyan00/Copybook/tarball/main
+npm install -g --allow-remote=root --allow-scripts=https://github.com/ArmanOhanyan00/Copybook/tarball/main https://github.com/ArmanOhanyan00/Copybook/tarball/main
 ```
 
-Installing this package runs the installer automatically. `--allow-scripts=copybook-mac` tells npm that this one
-package may run its install step. Newer npm versions block install steps unless you allow them. npm 11 may still
-print a warning about the install step, and it runs the step anyway. If npm did not install the app, run
-`copybook-mac` once and it does.
+The link appears twice on purpose. Installing this package runs the installer automatically. npm 12 and later
+block two things unless you allow them for the command: downloading a package from a link, and running a
+package's install step. `--allow-remote=root` allows the download from the link you typed. `--allow-scripts=` with
+the same link allows this one package to run its install step, which is what installs the app. Nothing else is
+allowed. npm 11 accepts the same command. If npm still did not install the app, run `copybook-mac` once and it does.
 
-The short form `npm install -g ArmanOhanyan00/Copybook` does not work with npm 11, so use the link above.
+The short form `npm install -g ArmanOhanyan00/Copybook` does not work, so use the link.
 
 **curl**
 
